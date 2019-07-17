@@ -3,7 +3,6 @@
 [] create-react-app was used to create your React app
 
 [] There are 2 container components
-    ItemFormContainer
     UnverifiedItemsContainer
     VerifiedItemsContainer
 [] There are 5 stateless components
@@ -18,7 +17,7 @@
 [] There are 3 routes
     / - root
     /items/create
-    /items/unverified 
+    /items/unverified
     /items/index
 [] react-router is being used with proper RESTful routing
 

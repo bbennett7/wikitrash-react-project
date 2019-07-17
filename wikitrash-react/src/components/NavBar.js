@@ -6,10 +6,10 @@ export default class NavBar extends Component {
   render() {
     return (
       <nav>
-        <NavLink url="/home" text="home" />
-        <NavLink url="/items/index" text="all items" />
-        <NavLink url="/items/new" text="add item" />
-        <NavLink url="/items/unverified" text="unverified items" />
+        <NavLink url="/" text="home   " />
+        <NavLink url="/items/index" text="all items   " />
+        <NavLink url="/items/unverified" text="unverified items   " />
+        <NavLink url="/items/new" text="add item   " />
       </nav>
     )
   }
