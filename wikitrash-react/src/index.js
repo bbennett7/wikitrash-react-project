@@ -14,7 +14,7 @@ ReactDOM.render((
   <Router>
     <React.Fragment>
       <Route path="/" component={App} />
-      <Route path="/items/index" component={VerifiedContainer} />
+      <Route exact path="/items" component={VerifiedContainer} />
       <Route path="/items/unverified" component={UnverifiedContainer} />
       <Route path="/items/new" component={ItemForm} />
     </React.Fragment>
