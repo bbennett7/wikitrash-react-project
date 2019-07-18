@@ -10,13 +10,16 @@
 
 .App-header {
   background-color: white;
-  min-height: 15vh;
-  display: flex;
-  flex-direction: column;
+  height: 15vh;
+  width: 100%;
+  display: block;
   align-items: center;
   justify-content: center;
   font-size: calc(30px + 2vmin);
   color: black;
+  position: fixed;
+  float: none;
+  z-index: 1;
 }
 
 .App-link {
@@ -25,9 +28,14 @@
 
 .Nav-bar {
   background-color: rgba(255, 255, 255, 0.5);
+  display: block;
   color: white;
+  width: 100%;
   border: 2px solid black;
   padding: 1% 0%;
+  margin-top: 15vh;
+  position: fixed;
+  z-index: 1;
 }
 
 .Nav-bar a {
@@ -38,27 +46,53 @@
   border: 2px solid black;
 }
 
+a:hover {
+  color: rgb(77, 123, 65);
+  text-decoration: underline;
+}
+
 .Main {
-  background-color: white;
-  width: 130vh;
-  height: 55vh;
-  margin: auto;
-  margin-top: 10vh;
+  background-color: rgba(255, 255, 255, 0.85);
+  width: 64%;
+  min-height: 20%;
+  margin: 30vh 17.7% 10vh 17.7%;
+  padding: 1%;
   border: 2px solid black;
-  padding: 3vh 6vh;
+  float: center;
+  display: inline-block;
+  position: relative;
 }
 
 .Verified-card {
-  border: 2px solid black;
-  width: 40vh;
-  margin-right: 2.5vh;
+  background-color: white;
+  border: 1px solid black;
+  min-height: 100%;
+  width: 45%;
+  margin: 2.3%;
   float: left;
 }
 
-#root {
+.Title {
+  display: inline-block;
+  float: left;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+.Unverified-card button {
+
+}
+
+.Background {
   background-image: url(./images/redwoods.jpg);
+  background-position: bottom;
   background-size: cover;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
+}
+
+#root {
+
 }
 
 @keyframes App-logo-spin {

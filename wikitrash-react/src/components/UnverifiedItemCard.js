@@ -14,11 +14,16 @@ class UnverifiedItemCard extends Component {
 
   render() {
     return (
-      <div>
-        <h1>{this.props.item.name}</h1>
-        <p>{this.props.item.rules}</p><br />
-        <button onClick={this.handleUpVote}>+1</button>
-        <button onClick={this.handleDownVote}>-1</button>
+      <div className="Unverified-card">
+        <h4 className="Title">{this.props.item.name}</h4>
+        <img src={this.props.item.image} height="60vh" width="60vh"/>
+        <ul>
+          <li><strong>rules:</strong> {this.props.item.rules}</li>
+          <li><strong>where to recycle:</strong> {this.props.item.locations}</li>
+          <li><strong>references:</strong> {this.props.item.references}</li>
+          <button onClick={this.handleUpVote}>+1</button>
+          <button onClick={this.handleDownVote}>-1</button>
+        </ul>
       </div>
     )
   }
