@@ -44,7 +44,7 @@ class ItemForm extends Component {
     return (
       <div className="Main">
         <form onSubmit={this.handleOnSubmit}>
-            Add an item <br />
+            <h3>add an item</h3>
           <label> Item <input type="text" name="name" onChange={this.handleOnChange} value={this.state.name} /> </label> <br />
             <label> Recyclable?
               <label> Yes <input type="radio" name="recyclable" onChange={this.handleOnChange} value="true" /> </label>

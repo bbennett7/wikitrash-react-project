@@ -40,11 +40,12 @@
 
 .Main {
   background-color: white;
-  width: 150vh;
-  height: 60vh;
+  width: 130vh;
+  height: 55vh;
   margin: auto;
   margin-top: 10vh;
   border: 2px solid black;
+  padding: 3vh 5vh;
 }
 
 #root {

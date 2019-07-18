@@ -20,7 +20,7 @@ class TopSearchesContainer extends Component {
     render() {
       return (
         <div className="Main">
-          Top Searches
+          <h3>top searched items</h3>
           {this.renderCards()}
         </div>
       )

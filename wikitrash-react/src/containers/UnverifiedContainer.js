@@ -28,7 +28,7 @@ class UnverifiedContainer extends Component {
     render() {
       return (
         <div className="Main">
-          Unverified Items
+          <h3>unverified items</h3>
           <SearchBar searchItems={this.props.searchItems} />
           {this.renderCards()}
         </div>
