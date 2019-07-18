@@ -7,10 +7,12 @@ import UnverifiedItemCard from '../components/UnverifiedItemCard'
 class UnverifiedContainer extends Component {
 
     renderCards = () => {
-      if (this.props.searchItem.length > 0) {
+      const unverifiedItems = this.props.items.filter((item) => item.upvotes < 10)
+      const searchItem = this.props.searchItem
+      if (searchItem.length > 0 && unverifiedItems.filter((item) => item.name.toLowerCase() == searchItem[0].name.toLowerCase()).length === 1) {
         return <UnverifiedItemCard item={this.props.searchItem[0]} />
       } else {
-        return this.props.items.map((item) => {
+        return unverifiedItems.map((item) => {
           return <UnverifiedItemCard item={item}/>
         })
       }
