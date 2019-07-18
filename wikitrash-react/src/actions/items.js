@@ -23,7 +23,12 @@ function addItem(item) {
   }
 }
 
+function searchItems(name) {
+  return(dispatch) => { dispatch({ type: 'SEARCH_ITEMS', payload: name })}
+}
+
 export {
   addItem,
   fetchItems,
+  searchItems
 }
