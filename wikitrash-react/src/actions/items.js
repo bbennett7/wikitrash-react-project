@@ -49,6 +49,7 @@ function upVoteItem(item) {
 }
 
 function downVoteItem(item) {
+  const downVoteItem = item
   fetch('http://localhost:3000/item', {
       method: 'PUT',
       body: JSON.stringify({item: {name: item.name, downvotes: true}}),
@@ -57,7 +58,7 @@ function downVoteItem(item) {
       }
     }).then(console.log("Success"))
 
-  return { type: 'DOWNVOTE_ITEM', item }
+  return { type: 'DOWNVOTE_ITEM', downVoteItem }
 }
 
 export {

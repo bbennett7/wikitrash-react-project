@@ -8,7 +8,7 @@ import VerifiedItemCard from '../components/VerifiedItemCard'
 class VerifiedContainer extends Component {
 
   renderCards = () => {
-    const verifiedItems = this.props.items.filter((item) => item.verified === true)
+    const verifiedItems = this.props.items.filter((item) => item.verified === true) || {}
     const searchItem = this.props.searchItem
 
     if (searchItem.length > 0 && verifiedItems.filter((item) => item.name.toLowerCase() === searchItem[0].name.toLowerCase()).length === 1) {

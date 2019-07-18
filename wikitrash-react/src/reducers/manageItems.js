@@ -10,25 +10,26 @@ export default function manageItems(state = {loading: false, items: [], searchIt
       return {...state, items: [...state.items, action.item]};
     case 'SEARCH_ITEMS':
       const item = state.items.filter((item) => item.name.toLowerCase() === action.payload.toLowerCase())
-      console.log(item[0].searches)
       item[0].searches += 1
-      console.log({...state, searchItem: Object.assign(item)})
       return {...state, searchItem: Object.assign(item)};
     case 'UPVOTE_ITEM':
       const upVoteItem = state.items.filter((item) => item.name.toLowerCase() === action.item.name.toLowerCase())
-      console.log(upVoteItem[0].upvotes)
       upVoteItem[0].upvotes += 1
-      console.log(upVoteItem[0].upvotes)
 
       return {...state};
     case 'DOWNVOTE_ITEM':
-      const downVoteItem = state.items.filter((item) => item.name.toLowerCase() === action.item.name.toLowerCase())
+      const downVoteItem = state.items.filter((item) => item.name.toLowerCase() === action.downVoteItem.name.toLowerCase())
 
-      console.log(downVoteItem[0].downvotes)
+      const index = state.items.findIndex((item) => item === downVoteItem[0])
+
       downVoteItem[0].downvotes += 1
       console.log(downVoteItem[0].downvotes)
-
-      return {...state};
+  
+      if (downVoteItem[0].downvotes >= 10) {
+        return {...state.items.splice(index, 1)};
+      } else {
+        return {...state};
+      }
     default:
       return state;
   }

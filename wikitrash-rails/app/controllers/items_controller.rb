@@ -11,6 +11,9 @@ class ItemsController < ApplicationController
     item.upvotes += 1 if item_params[:upvotes]
     item.downvotes += 1 if item_params[:downvotes]
     item.verified = true if item.upvotes >= 10
+
+    Item.all.delete(item) if item.downvotes >= 10
+    
     item.save
   end
 
