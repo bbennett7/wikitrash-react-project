@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import VerifiedItemCard from '../components/UnverifiedItemCard'
+import VerifiedItemCard from '../components/VerifiedItemCard'
 
 class TopSearchesContainer extends Component {
 
@@ -13,7 +13,7 @@ class TopSearchesContainer extends Component {
     const topFive = itemsArray.slice(0, 5)
 
     return topFive.map((item) => {
-      return <VerifiedItemCard item={item}/>
+      return <VerifiedItemCard item={item} />
     })
   }
 
