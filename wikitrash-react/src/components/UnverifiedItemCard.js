@@ -4,8 +4,12 @@ import { upVoteItem } from '../actions/items'
 
 class UnverifiedItemCard extends Component {
 
-  handleOnUpVote = (event) => {
+  handleUpVote = (event) => {
     this.props.upVoteItem(this.props.item)
+  }
+
+  handleDownVote = (event) => {
+    this.props.downVoteItem(this.props.item)
   }
 
   render() {
@@ -13,16 +17,11 @@ class UnverifiedItemCard extends Component {
       <div>
         <h1>{this.props.item.name}</h1>
         <p>{this.props.item.rules}</p><br />
-        <button onClick={this.handleOnUpVote}>+1</button>
+        <button onClick={this.handleUpVote}>+1</button>
+        <button onClick={this.handleDownVote}>-1</button>
       </div>
     )
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    upVoteItem: item => dispatch(upVoteItem(item))
-  }
-}
-
-export default connect(null, mapDispatchToProps)(UnverifiedItemCard)
+export default UnverifiedItemCard

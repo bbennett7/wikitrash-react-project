@@ -9,6 +9,7 @@ class ItemsController < ApplicationController
     item = Item.all[i]
     item.searches += 1 if item_params[:searches]
     item.upvotes += 1 if item_params[:upvotes]
+    item.downvotes += 1 if item_params[:downvotes]
     item.save
   end
 

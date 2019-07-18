@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { searchItems } from '../actions/items'
+import { searchItems, upVoteItem, downVoteItem } from '../actions/items'
 import SearchBar from '../components/SearchBar';
 import UnverifiedItemCard from '../components/UnverifiedItemCard'
 
@@ -10,10 +10,10 @@ class UnverifiedContainer extends Component {
       const unverifiedItems = this.props.items.filter((item) => item.upvotes < 10)
       const searchItem = this.props.searchItem
       if (searchItem.length > 0 && unverifiedItems.filter((item) => item.name.toLowerCase() == searchItem[0].name.toLowerCase()).length === 1) {
-        return <UnverifiedItemCard item={this.props.searchItem[0]} />
+        return <UnverifiedItemCard item={this.props.searchItem[0]} upVoteItem={this.props.upVoteItem} downVoteItem={this.props.downVoteItem} />
       } else {
         return unverifiedItems.map((item) => {
-          return <UnverifiedItemCard item={item}/>
+          return <UnverifiedItemCard item={item} upVoteItem={this.props.upVoteItem} downVoteItem={this.props.downVoteItem} />
         })
       }
     }
@@ -37,4 +37,12 @@ class UnverifiedContainer extends Component {
     return {items: state.items, searchItem: state.searchItem}
   }
 
-export default connect(mapStateToProps, { searchItems })(UnverifiedContainer)
+  const mapDispatchToProps = (dispatch) => {
+    return {
+      searchItems: item => dispatch(searchItems(item)),
+      upVoteItem: item => dispatch(upVoteItem(item)),
+      downVoteItem: item => dispatch(downVoteItem(item))
+    }
+  }
+
+export default connect(mapStateToProps, mapDispatchToProps)(UnverifiedContainer)

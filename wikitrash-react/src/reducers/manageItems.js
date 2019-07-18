@@ -21,6 +21,14 @@ export default function manageItems(state = {loading: false, items: [], searchIt
       console.log(upVoteItem[0].upvotes)
 
       return {...state};
+    case 'DOWNVOTE_ITEM':
+      const downVoteItem = state.items.filter((item) => item.name.toLowerCase() === action.item.name.toLowerCase())
+
+      console.log(downVoteItem[0].downvotes)
+      downVoteItem[0].downvotes += 1
+      console.log(downVoteItem[0].downvotes)
+
+      return {...state};
     default:
       return state;
   }

@@ -48,9 +48,22 @@ function upVoteItem(item) {
   return { type: 'UPVOTE_ITEM', item }
 }
 
+function downVoteItem(item) {
+  fetch('http://localhost:3000/item', {
+      method: 'PUT',
+      body: JSON.stringify({item: {name: item.name, downvotes: true}}),
+      headers:{
+        'Content-Type': 'application/json'
+      }
+    }).then(console.log("Success"))
+
+  return { type: 'DOWNVOTE_ITEM', item }
+}
+
 export {
   addItem,
   fetchItems,
   searchItems,
-  upVoteItem
+  upVoteItem,
+  downVoteItem
 }
