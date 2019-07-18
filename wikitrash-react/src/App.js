@@ -1,17 +1,31 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 
 import NavBar from './components/NavBar'
+import { connect } from 'react-redux'
+import { fetchItems } from './actions/items'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        wikitrash
-      </header>
-      <NavBar />
-    </div>
-  );
+class App extends Component {
+
+  componentDidMount() {
+    this.props.fetchItems()
+    console.log(this.state)
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          wikitrash
+        </header>
+        <NavBar />
+      </div>
+    )
+  }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {items: state.items}
+}
+
+export default connect(mapStateToProps, {fetchItems})(App);

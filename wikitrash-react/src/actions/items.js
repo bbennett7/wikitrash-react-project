@@ -1,3 +1,14 @@
+function fetchItems() {
+  return(dispatch) => {
+    dispatch({type: 'LOADING_ITEMS'});
+    return fetch('http://localhost:3000/db')
+      .then(response => { return response.json() })
+      .then(responseJSON => { return responseJSON.items})
+      .then(items => { dispatch({ type: 'FETCH_ITEMS', payload: items })})
+  }
+}
+
+
 function addItem(item) {
   fetch('http://localhost:3000/item', {
       method: 'POST',
@@ -14,5 +25,6 @@ function addItem(item) {
 }
 
 export {
-  addItem
+  addItem,
+  fetchItems
 }

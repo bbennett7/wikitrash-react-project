@@ -3,10 +3,15 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @item.save
   end
-end
 
-private
+  def db
+    @items = Item.all
+    render json: @items.to_json
+  end
 
-def item_params
-  params.require(:item).permit(:name, :recyclable, :image, :rules, :locations, :references)
+  private
+
+  def item_params
+    params.require(:item).permit(:name, :recyclable, :image, :rules, :locations, :references)
+  end
 end

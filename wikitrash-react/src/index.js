@@ -7,11 +7,12 @@ import UnverifiedContainer from './containers/UnverifiedContainer'
 import VerifiedContainer from './containers/VerifiedContainer'
 import ItemForm from './components/ItemForm'
 import manageItems from './reducers/manageItems'
+import thunk from 'redux-thunk';
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import * as serviceWorker from './serviceWorker';
 
-const store = createStore(manageItems)
+const store = createStore(manageItems, applyMiddleware(thunk))
 
 ReactDOM.render(
   <Provider store={store}>
