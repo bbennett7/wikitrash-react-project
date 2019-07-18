@@ -25,5 +25,5 @@ function addItem(item) {
 
 export {
   addItem,
-  fetchItems
+  fetchItems,
 }

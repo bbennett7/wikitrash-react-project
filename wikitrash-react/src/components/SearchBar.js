@@ -12,13 +12,22 @@ export default class SearchBar extends Component {
     this.setState({
       searchInput: event.target.value
     })
-    console.log(this.state.searchInput)
+  }
+
+  handleOnSubmit = (event) => {
+    event.preventDefault();
+    this.props.searchItems(this.state.searchInput)
+    
+    this.setState({
+      searchInput: ''
+    })
   }
 
   render() {
     return (
-      <form>
-      <label> Search <input type="text" onChange={this.handleOnChange} value={this.state.searchInput} /> </label>
+      <form onSubmit={this.handleOnSubmit}>
+      <label> <input type="text" onChange={this.handleOnChange} value={this.state.searchInput} /> </label>
+      <input type="submit" value="Search" />
       </form>
     )
   }
