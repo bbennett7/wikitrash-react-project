@@ -16,7 +16,7 @@ class VerifiedContainer extends Component {
         return <VerifiedItemCard item={searchItem[0]} />
       } else {
         return verifiedItems.map((item) => {
-          return <VerifiedItemCard item={item}/>
+          return <VerifiedItemCard item={item} />
         })
       }
     }

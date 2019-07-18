@@ -45,7 +45,14 @@
   margin: auto;
   margin-top: 10vh;
   border: 2px solid black;
-  padding: 3vh 5vh;
+  padding: 3vh 6vh;
+}
+
+.Verified-card {
+  border: 2px solid black;
+  width: 40vh;
+  margin-right: 2.5vh;
+  float: left;
 }
 
 #root {

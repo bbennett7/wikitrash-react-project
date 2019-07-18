@@ -10,9 +10,9 @@ class TopSearchesContainer extends Component {
     itemsArray.sort(function (a, b) {
       return b.searches - a.searches;
     });
-    const topFive = itemsArray.slice(0, 5)
+    const topSix = itemsArray.slice(0, 6)
 
-    return topFive.map((item) => {
+    return topSix.map((item) => {
       return <VerifiedItemCard item={item} />
     })
   }
