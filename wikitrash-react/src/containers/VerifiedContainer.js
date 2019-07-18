@@ -8,10 +8,13 @@ import VerifiedItemCard from '../components/VerifiedItemCard'
 class VerifiedContainer extends Component {
 
   renderCards = () => {
-    if (this.props.searchItem.length > 0) {
-      return <VerifiedItemCard item={this.props.searchItem[0]} />
+    const verifiedItems = this.props.items.filter((item) => item.upvotes >= 10)
+    const searchItem = this.props.searchItem
+
+    if (searchItem.length > 0 && verifiedItems.filter((item) => item.name.toLowerCase() === searchItem[0].name.toLowerCase()).length === 1) {
+      return <VerifiedItemCard item={searchItem[0]} />
     } else {
-      return this.props.items.map((item) => {
+      return verifiedItems.map((item) => {
         return <VerifiedItemCard item={item}/>
       })
     }
