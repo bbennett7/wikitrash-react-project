@@ -1,3 +1,3 @@
-- Build create action
-- Create serializer for item
-- Build API 
+[X] Build create action
+[X] Create serializer for item
+[X] Build API 

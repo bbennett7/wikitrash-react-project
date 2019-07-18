@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './index.css';
 import App from './App';
-import UnverifiedContainer from './containers/UnverifiedContainer'
-import VerifiedContainer from './containers/VerifiedContainer'
-import ItemForm from './components/ItemForm'
-import manageItems from './reducers/manageItems'
+import UnverifiedContainer from './containers/UnverifiedContainer';
+import VerifiedContainer from './containers/VerifiedContainer';
+import ItemForm from './components/ItemForm';
+import manageItems from './reducers/manageItems';
 import thunk from 'redux-thunk';
-import { Provider } from 'react-redux'
-import { createStore, applyMiddleware } from 'redux'
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
 import * as serviceWorker from './serviceWorker';
 
 const store = createStore(manageItems, applyMiddleware(thunk))
