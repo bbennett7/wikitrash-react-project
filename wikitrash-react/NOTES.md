@@ -2,15 +2,15 @@
 
 [X] create-react-app was used to create your React app
 
-[] There are 2 container components
-    UnverifiedItemsContainer - add a way to edit and reset votes?
+[X] There are 2 container components
+    X UnverifiedItemsContainer
     X VerifiedItemsContainer
-[] There are 5 stateless components
+[X] There are 5 stateless components
     X NavBar
     X NavLink
     X VerifiedItemCard
-    UnverifiedItemCard
-    TopSearches
+    X UnverifiedItemCard
+    X TopSearches
 [X] There are 3 routes
 
 [X] react-router is being used with proper RESTful routing

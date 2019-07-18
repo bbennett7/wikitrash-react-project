@@ -19,6 +19,12 @@
   color: white;
 }
 
+#root {
+  background-image: url(./images/redwoods.jpg);
+  background-size: cover;
+  height: 100vh;
+}
+
 .App-link {
   color: #61dafb;
 }

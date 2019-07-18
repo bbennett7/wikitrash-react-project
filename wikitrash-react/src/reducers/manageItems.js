@@ -14,7 +14,12 @@ export default function manageItems(state = {loading: false, items: [], searchIt
       return {...state, searchItem: Object.assign(item)};
     case 'UPVOTE_ITEM':
       const upVoteItem = state.items.filter((item) => item.name.toLowerCase() === action.item.name.toLowerCase())
+
       upVoteItem[0].upvotes += 1
+
+      if (upVoteItem[0].upvotes >= 10) {
+        upVoteItem[0].verified = true
+      };
 
       return {...state};
     case 'DOWNVOTE_ITEM':
@@ -24,7 +29,7 @@ export default function manageItems(state = {loading: false, items: [], searchIt
 
       downVoteItem[0].downvotes += 1
       console.log(downVoteItem[0].downvotes)
-  
+
       if (downVoteItem[0].downvotes >= 10) {
         return {...state.items.splice(index, 1)};
       } else {
