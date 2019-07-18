@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { addItem } from '../actions/items'
 
-export default class ItemForm extends Component {
+class ItemForm extends Component {
   constructor() {
     super();
     this.state = {
-      item: '',
+      name: '',
       recyclable: '',
       image: '',
       rules: '',
@@ -23,7 +25,18 @@ export default class ItemForm extends Component {
   }
 
   handleOnSubmit = (event) => {
+    event.preventDefault();
+    let newItem = {item: this.state}
+    this.props.addItem(newItem)
 
+    this.setState({
+      name: '',
+      recyclable: '',
+      image: '',
+      rules: '',
+      locations: '',
+      references: ''
+    })
   }
 
 
@@ -31,7 +44,7 @@ export default class ItemForm extends Component {
     return (
       <form onSubmit={this.handleOnSubmit}>
           Add an item <br />
-        <label> Item <input type="text" name="item" onChange={this.handleOnChange} value={this.state.item} /> </label> <br />
+        <label> Item <input type="text" name="name" onChange={this.handleOnChange} value={this.state.name} /> </label> <br />
           <label> Recyclable?
             <label> Yes <input type="radio" name="recyclable" onChange={this.handleOnChange} value="true" /> </label>
             <label> No <input type="radio" name="recyclable" onChange={this.handleOnChange} value="false" /> </label>
@@ -45,3 +58,11 @@ export default class ItemForm extends Component {
     )
   }
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addItem: formData => dispatch(addItem(formData))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(ItemForm)
