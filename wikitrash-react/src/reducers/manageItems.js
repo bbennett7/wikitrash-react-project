@@ -10,6 +10,8 @@ export default function manageItems(state = {loading: false, items: [], searchIt
       return {...state, items: [...state.items, action.item]};
     case 'SEARCH_ITEMS':
       const item = state.items.filter((item) => item.name.toLowerCase() === action.payload.toLowerCase())
+      console.log(item[0].searches)
+      item[0].searches += 1
       console.log({...state, searchItem: Object.assign(item)})
       return {...state, searchItem: Object.assign(item)};
     default:

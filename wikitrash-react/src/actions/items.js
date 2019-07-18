@@ -24,6 +24,15 @@ function addItem(item) {
 }
 
 function searchItems(name) {
+  fetch('http://localhost:3000/item', {
+      method: 'PUT',
+      body: JSON.stringify({item: {name: name}}),
+      headers:{
+        'Content-Type': 'application/json'
+      }
+    }).then(console.log("Success"))
+
+
   return(dispatch) => { dispatch({ type: 'SEARCH_ITEMS', payload: name })}
 }
 

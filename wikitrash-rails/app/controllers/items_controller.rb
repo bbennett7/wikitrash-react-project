@@ -1,7 +1,14 @@
 class ItemsController < ApplicationController
   def create
-    @item = Item.new(item_params)
-    @item.save
+    item = Item.new(item_params)
+    item.save
+  end
+
+  def update
+    i = Item.all.find_index {|item| item.name.downcase == item_params[:name]}
+    item = Item.all[i]
+    item.searches += 0
+    item.save
   end
 
   def db
