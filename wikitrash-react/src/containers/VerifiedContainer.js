@@ -7,24 +7,26 @@ import VerifiedItemCard from '../components/VerifiedItemCard'
 
 class VerifiedContainer extends Component {
 
-  renderCard = () => {
+  renderCards = () => {
     if (this.props.searchItem.length > 0) {
-      return <VerifiedItemCard item={this.props.searchItem[0]}/>
+      return <VerifiedItemCard item={this.props.searchItem[0]} />
+    } else {
+      return this.props.items.map((item) => {
+        return <VerifiedItemCard item={item}/>
+      })
     }
   }
 
   componentDidUpdate = () => {
-    this.renderCard()
+    this.renderCards()
   }
-
-
 
   render() {
     return (
       <div>
         Verified Items
-        <SearchBar searchItems={this.props.searchItems}/>
-        {this.renderCard()}
+        <SearchBar searchItems={this.props.searchItems} />
+        {this.renderCards()}
       </div>
     )
   }

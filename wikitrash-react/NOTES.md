@@ -4,11 +4,11 @@
 
 [] There are 2 container components
     UnverifiedItemsContainer - add a way to edit and reset votes?
-    VerifiedItemsContainer
+    X VerifiedItemsContainer
 [] There are 5 stateless components
     X NavBar
     X NavLink
-    VerifiedItemCard
+    X VerifiedItemCard
     UnverifiedItemCard
     TopSearches
 [X] There are 3 routes
