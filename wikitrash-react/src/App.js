@@ -9,7 +9,6 @@ class App extends Component {
 
   componentDidMount() {
     this.props.fetchItems()
-    console.log(this.state)
   }
 
   render() {

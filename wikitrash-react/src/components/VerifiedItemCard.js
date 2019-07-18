@@ -5,8 +5,8 @@ export default class VerifiedItemCard extends Component {
   render() {
     return (
       <div>
-        {this.props.item.name}
-        {this.props.item.rules}
+        <h1>{this.props.item.name}</h1>
+        <p>{this.props.item.rules}</p><br />
       </div>
     )
   }
