@@ -28,7 +28,7 @@ class VerifiedContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div className="Main">
         Verified Items
         <SearchBar searchItems={this.props.searchItems} />
         {this.renderCards()}

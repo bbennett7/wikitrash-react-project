@@ -9,7 +9,7 @@ class UnverifiedContainer extends Component {
     renderCards = () => {
       if (this.props.items) {
         let unverifiedItems = this.props.items.filter((item) => item.verified === false)
-        
+
         const searchItem = this.props.searchItem
         if (searchItem.length > 0 && unverifiedItems.filter((item) => item.name.toLowerCase() == searchItem[0].name.toLowerCase()).length === 1) {
           return <UnverifiedItemCard item={this.props.searchItem[0]} upVoteItem={this.props.upVoteItem} downVoteItem={this.props.downVoteItem} />
@@ -27,7 +27,7 @@ class UnverifiedContainer extends Component {
 
     render() {
       return (
-        <div>
+        <div className="Main">
           Unverified Items
           <SearchBar searchItems={this.props.searchItems} />
           {this.renderCards()}

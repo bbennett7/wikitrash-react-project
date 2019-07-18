@@ -19,7 +19,7 @@ class TopSearchesContainer extends Component {
 
     render() {
       return (
-        <div>
+        <div className="Main">
           Top Searches
           {this.renderCards()}
         </div>
