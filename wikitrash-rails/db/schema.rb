@@ -21,11 +21,11 @@ ActiveRecord::Schema.define(version: 2019_07_16_225652) do
     t.string "image"
     t.text "rules"
     t.text "locations"
-    t.text "sources"
-    t.boolean "verified"
-    t.integer "downvotes"
-    t.integer "upvotes"
-    t.integer "searches"
+    t.text "references"
+    t.boolean "verified", default: false
+    t.integer "downvotes", default: 0
+    t.integer "upvotes", default: 0
+    t.integer "searches", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
