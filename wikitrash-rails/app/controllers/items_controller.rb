@@ -5,9 +5,10 @@ class ItemsController < ApplicationController
   end
 
   def update
-    i = Item.all.find_index {|item| item.name.downcase == item_params[:name]}
+    i = Item.all.find_index {|item| item.name.downcase == item_params[:name].downcase}
     item = Item.all[i]
-    item.searches += 1
+    item.searches += 1 if item_params[:searches]
+    item.upvotes += 1 if item_params[:upvotes]
     item.save
   end
 
@@ -19,6 +20,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :recyclable, :image, :rules, :locations, :references)
+    params.require(:item).permit(:name, :recyclable, :image, :rules, :locations, :references, :upvotes, :downvotes)
   end
 end

@@ -26,7 +26,7 @@ function addItem(item) {
 function searchItems(name) {
   fetch('http://localhost:3000/item', {
       method: 'PUT',
-      body: JSON.stringify({item: {name: name}}),
+      body: JSON.stringify({item: {name: name, searches: true}}),
       headers:{
         'Content-Type': 'application/json'
       }
@@ -37,8 +37,15 @@ function searchItems(name) {
 }
 
 function upVoteItem(item) {
-    console.log({ type: 'UPVOTE_ITEM', item })
-    return { type: 'UPVOTE_ITEM', item }
+  fetch('http://localhost:3000/item', {
+      method: 'PUT',
+      body: JSON.stringify({item: {name: item.name, upvotes: true}}),
+      headers:{
+        'Content-Type': 'application/json'
+      }
+    }).then(console.log("Success"))
+
+  return { type: 'UPVOTE_ITEM', item }
 }
 
 export {
