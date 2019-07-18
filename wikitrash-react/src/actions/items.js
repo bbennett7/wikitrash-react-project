@@ -36,8 +36,14 @@ function searchItems(name) {
   return(dispatch) => { dispatch({ type: 'SEARCH_ITEMS', payload: name })}
 }
 
+function upVoteItem(item) {
+    console.log({ type: 'UPVOTE_ITEM', item })
+    return { type: 'UPVOTE_ITEM', item }
+}
+
 export {
   addItem,
   fetchItems,
-  searchItems
+  searchItems,
+  upVoteItem
 }

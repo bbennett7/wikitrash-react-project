@@ -4,7 +4,7 @@
 [X] V container and card
 [X] UV container and UV cards
 [X] SearchBar
-[ ] TopSearches
+[X] TopSearches
 [ ] Upvotes and downvotes
 [ ] Display conditionally based on votes in V or UV
 [ ] Edit, update and reset vote count if too many bad votes
