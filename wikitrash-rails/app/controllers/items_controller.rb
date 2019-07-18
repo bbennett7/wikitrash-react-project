@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
   def update
     i = Item.all.find_index {|item| item.name.downcase == item_params[:name]}
     item = Item.all[i]
-    item.searches += 0
+    item.searches += 1
     item.save
   end
 
