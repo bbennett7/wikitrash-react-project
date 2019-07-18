@@ -10,6 +10,7 @@ class ItemsController < ApplicationController
     item.searches += 1 if item_params[:searches]
     item.upvotes += 1 if item_params[:upvotes]
     item.downvotes += 1 if item_params[:downvotes]
+    item.verified = true if item.upvotes >= 10
     item.save
   end
 
