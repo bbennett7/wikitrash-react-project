@@ -4,3 +4,4 @@
 - V and UV cards
 - SearchBar
 - TopSearches
+- MAKE SINGLE PAGE APP 

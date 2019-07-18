@@ -3,11 +3,10 @@ function fetchItems() {
     dispatch({type: 'LOADING_ITEMS'});
     return fetch('http://localhost:3000/db')
       .then(response => { return response.json() })
-      .then(responseJSON => { return responseJSON.items})
+      .then(responseJSON => { return responseJSON})
       .then(items => { dispatch({ type: 'FETCH_ITEMS', payload: items })})
   }
 }
-
 
 function addItem(item) {
   fetch('http://localhost:3000/item', {

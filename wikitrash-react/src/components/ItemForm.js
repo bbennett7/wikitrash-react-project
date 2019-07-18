@@ -26,7 +26,7 @@ class ItemForm extends Component {
 
   handleOnSubmit = (event) => {
     event.preventDefault();
-    let newItem = {item: this.state}
+    let newItem = this.state
     this.props.addItem(newItem)
 
     this.setState({
