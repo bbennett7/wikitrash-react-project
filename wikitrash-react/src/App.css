@@ -9,17 +9,38 @@
 }
 
 .App-header {
+  font-family: 'Raleway', sans-serif;
   background-color: white;
-  height: 15vh;
+  height: 10%;
   width: 100%;
   display: block;
   align-items: center;
+  padding: 1% 0% 2.5%;
   justify-content: center;
-  font-size: calc(30px + 2vmin);
+  font-size: calc(35px + 2vmin);
   color: black;
   position: fixed;
   float: none;
   z-index: 1;
+}
+
+.Header {
+  border-bottom: 3px solid rgb(77, 123, 65);
+  border-left: 4px solid rgb(77, 123, 65);
+  padding: .2% 4%;
+}
+
+.App-header p {
+  padding-top: .2%;
+  font-size: calc(1px + 2vmin);
+  font-weight: 200;
+  font-style: italic;
+}
+
+.R-symbol {
+  vertical-align: text-bottom;
+  padding: .3% 0%;
+  margin: 0% -.5%;
 }
 
 .App-link {
@@ -33,7 +54,7 @@
   width: 100%;
   border: 2px solid black;
   padding: 1% 0%;
-  margin-top: 15vh;
+  margin-top: 17vh;
   position: fixed;
   z-index: 1;
 }
@@ -42,7 +63,7 @@
   color: black;
   text-decoration: none;
   background-color: white;
-  padding: 1% 5%;
+  padding: 1% 6%;
   border: 2px solid black;
 }
 
@@ -55,7 +76,7 @@ a:hover {
   background-color: rgba(255, 255, 255, 0.85);
   width: 64%;
   min-height: 20%;
-  margin: 30vh 17.7% 10vh 17.7%;
+  margin: 30vh 17% 10vh 17%;
   padding: 1%;
   border: 2px solid black;
   float: center;

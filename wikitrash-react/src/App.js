@@ -4,18 +4,19 @@ import './App.css';
 import NavBar from './components/NavBar'
 import { connect } from 'react-redux'
 import { fetchItems } from './actions/items'
+import RecyclingSymbol from './images/RecyclingSymbol.jpg'
 
 class App extends Component {
 
   componentDidMount() {
     this.props.fetchItems()
   }
-
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          wikitrash
+          <span className="Header">WikiTr <img className="R-symbol" src={RecyclingSymbol} height="50px" width="50px" /> sh</span>
+          <p>Your source for the responsible disposal of all materials.</p>
         </header>
         <NavBar />
       </div>
