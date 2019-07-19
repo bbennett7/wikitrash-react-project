@@ -88,6 +88,29 @@ h3 {
   font-family: 'Raleway', sans-serif;
 }
 
+.Search {
+  margin: 0% 2.3%;
+}
+
+.Search input[type="text"] {
+  width: 25%;
+  border: 1px solid black;
+}
+
+.Search input[type="submit"] {
+  border: 1px solid black;
+  margin-left: 1%;
+  width: 10%;
+  border-radius: 3px;
+  color: black;
+}
+
+.Search input[type="submit"]:hover {
+  background-color: rgb(77, 123, 65);
+  border: 1px solid rgb(77, 123, 65);
+  color: white;
+}
+
 .Verified-card, .Unverified-card {
   background-color: white;
   border: 1px solid black;

@@ -17,7 +17,7 @@ export default class SearchBar extends Component {
   handleOnSubmit = (event) => {
     event.preventDefault();
     this.props.searchItems(this.state.searchInput)
-    
+
     this.setState({
       searchInput: ''
     })
@@ -25,7 +25,7 @@ export default class SearchBar extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleOnSubmit}>
+      <form className="Search" onSubmit={this.handleOnSubmit}>
       <label> <input type="text" onChange={this.handleOnChange} value={this.state.searchInput} /> </label>
       <input type="submit" value="Search" />
       </form>
