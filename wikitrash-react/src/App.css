@@ -63,7 +63,7 @@ a:hover {
   position: relative;
 }
 
-.Verified-card {
+.Verified-card, .Unverified-card {
   background-color: white;
   border: 1px solid black;
   min-height: 100%;
@@ -72,15 +72,40 @@ a:hover {
   float: left;
 }
 
+.Upvote {
+  border: 2px solid rgb(77, 123, 65);
+  width: 15%;
+  border-radius: 3px;
+  color: rgb(77, 123, 65);
+  margin-right: 1%;
+}
+
+.Upvote:hover {
+  background-color: rgb(77, 123, 65);
+  border: 2px solid rgb(77, 123, 65);
+  color: white;
+}
+
+.Downvote {
+  border: 2px solid #8B0000;
+  width: 15%;
+  border-radius: 3px;
+  color: #8B0000;
+  margin-right: 15%;
+}
+
+.Downvote:hover {
+  background-color: #8B0000;
+  border: 2px solid #8B0000;
+  border-radius: 3px;
+  color: white;
+}
+
 .Title {
   display: inline-block;
   float: left;
   padding-left: 3%;
   padding-right: 3%;
-}
-
-.Unverified-card button {
-
 }
 
 .Background {

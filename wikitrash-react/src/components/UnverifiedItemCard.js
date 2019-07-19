@@ -21,8 +21,10 @@ class UnverifiedItemCard extends Component {
           <li><strong>rules:</strong> {this.props.item.rules}</li>
           <li><strong>where to recycle:</strong> {this.props.item.locations}</li>
           <li><strong>references:</strong> {this.props.item.references}</li>
-          <button onClick={this.handleUpVote}>+1</button>
-          <button onClick={this.handleDownVote}>-1</button>
+          <br />
+          <p>Is this information accurate?</p>
+          <button onClick={this.handleDownVote} className="Downvote">No</button>
+          <button onClick={this.handleUpVote} className="Upvote">Yes</button>
         </ul>
       </div>
     )
