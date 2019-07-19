@@ -23,4 +23,4 @@
 
 [X] Good understanding of state and props in React
 
-[] Knowledge of async JS with Promises
+[X] Knowledge of async JS with Promises

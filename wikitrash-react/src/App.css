@@ -84,8 +84,13 @@ a:hover {
   position: relative;
 }
 
-h3 {
+h2 {
   font-family: 'Raleway', sans-serif;
+}
+
+.Main p {
+  margin: -1% 0% 3%;
+  font-style: italic;
 }
 
 .Search {
@@ -213,8 +218,9 @@ textarea {
   width: 100%;
 }
 
-#root {
-
+.Footer {
+  height: 30%;
+  width: 100%;
 }
 
 @keyframes App-logo-spin {

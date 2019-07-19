@@ -43,7 +43,7 @@ class ItemForm extends Component {
   render() {
     return (
       <div className="Main">
-        <h3>add an item</h3>
+        <h2>add an item</h2>
         <form className="Add-form" onSubmit={this.handleOnSubmit}>
           <label> Item <input type="text" name="name" onChange={this.handleOnChange} value={this.state.name} /> </label> <br />
           <label> Recyclable?
