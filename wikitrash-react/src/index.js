@@ -7,6 +7,7 @@ import TopSearchesContainer from './containers/TopSearchesContainer'
 import UnverifiedContainer from './containers/UnverifiedContainer';
 import VerifiedContainer from './containers/VerifiedContainer';
 import ItemForm from './components/ItemForm';
+import About from './components/About'
 import manageItems from './reducers/manageItems';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
@@ -24,6 +25,7 @@ ReactDOM.render(
         <Route exact path="/items" component={VerifiedContainer} />
         <Route path="/items/unverified" component={UnverifiedContainer} />
         <Route path="/items/new" component={ItemForm} />
+        <Route exact path="/about" component={About} />
       </React.Fragment>
     </Router>
   </Provider>,

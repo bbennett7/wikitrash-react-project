@@ -11,6 +11,7 @@ export default class NavBar extends Component {
         <NavLink url="/items" text="all items" />
         <NavLink url="/items/unverified" text="unverified items" />
         <NavLink url="/items/new" text="add item" />
+        <NavLink url="/about" text="about" />
       </nav>
     )
   }
