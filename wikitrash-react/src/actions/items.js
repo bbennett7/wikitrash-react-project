@@ -37,6 +37,10 @@ function searchItems(name) {
   return(dispatch) => { dispatch({ type: 'SEARCH_ITEMS', payload: name })}
 }
 
+function resetSearchItem() {
+  return(dispatch) => { dispatch({ type: 'RESET_SEARCH_ITEM'})}
+}
+
 function upVoteItem(item) {
   fetch('http://localhost:3000/item', {
       method: 'PUT',
@@ -66,6 +70,7 @@ export {
   addItem,
   fetchItems,
   searchItems,
+  resetSearchItem,
   upVoteItem,
   downVoteItem
 }
