@@ -8,7 +8,7 @@ export default function manageItems(state = {loading: false, items: [], searchIt
 
     case 'ADD_ITEM':
       console.log({...state, items: [...state.items, action.item]})
-      return {...state, items: [...state.items, Object.assign(action.item, {verified: false})]};
+      return {...state, items: [...state.items, Object.assign(action.item, {verified: false, downvotes: 0, upvotes: 0})]};
 
     case 'SEARCH_ITEMS':
       const item = state.items.filter((item) => item.name.toLowerCase() === action.payload.toLowerCase())
@@ -30,9 +30,11 @@ export default function manageItems(state = {loading: false, items: [], searchIt
       const downVoteItem = state.items.filter((item) => item.name.toLowerCase() === action.downVoteItem.name.toLowerCase())
       const index = state.items.findIndex((item) => item === downVoteItem[0])
       downVoteItem[0].downvotes += 1
+
       console.log(downVoteItem[0].downvotes)
       if (downVoteItem[0].downvotes >= 10) {
-        return {...state.items.splice(index, 1)};
+        state.items.splice(index, 1)
+        return {...state};
       } else {
         return {...state};
       }
