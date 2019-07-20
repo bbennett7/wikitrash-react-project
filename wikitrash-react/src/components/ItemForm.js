@@ -45,12 +45,12 @@ class ItemForm extends Component {
       <div className="Main">
         <h2>add an item</h2>
         <form className="Add-form" onSubmit={this.handleOnSubmit}>
-          <label> Item <input type="text" name="name" onChange={this.handleOnChange} value={this.state.name} /> </label> <br />
+          <label> Item <br /><input type="text" name="name" onChange={this.handleOnChange} value={this.state.name} /> </label>
           <label> Recyclable?
             Yes <input type="radio" name="recyclable" onChange={this.handleOnChange} value="true" />
             No <input type="radio" name="recyclable" onChange={this.handleOnChange} value="false" />
-          </label> <br />
-          <label className="Image-input"> Image <input type="text" className="Image-input" name="image" onChange={this.handleOnChange} value={this.state.image} /> </label><br />
+          </label>
+          <label className="Image-input"> Image <br /> <input type="text" className="Image-input" name="image" onChange={this.handleOnChange} value={this.state.image} /> </label><br />
           <label> Rules <br/>
           <textarea name="rules" onChange={this.handleOnChange} value={this.state.rules} /> </label> <br />
           <label> Locations (separated by semicolon) <br/>

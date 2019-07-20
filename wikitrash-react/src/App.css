@@ -149,13 +149,14 @@ h2 {
 }
 
 .Image-input {
-  margin-bottom: 5vh;
+  margin-top: 1vh;
 }
 
 textarea {
   vertical-align: text-top;
   height: 18vh;
   width: 50vh;
+  margin-bottom: 1.5vh;
 }
 
 .Add-form input[type="submit"] {
@@ -193,6 +194,7 @@ textarea {
   width: 15%;
   border-radius: 3px;
   color: #8B0000;
+  padding: 1% 4%;
   margin-right: 15%;
 }
 

@@ -15,7 +15,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <span className="Header">WikiTr <img className="R-symbol" src={RecyclingSymbol} height="50px" width="50px" /> sh</span>
+          <span className="Header">WikiTr <img className="R-symbol" src={RecyclingSymbol} height="50px" width="50px" alt="recycling symbol as the letter A" /> sh</span>
           <p>Your source for the responsible disposal of all materials.</p>
         </header>
         <NavBar />

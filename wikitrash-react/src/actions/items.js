@@ -1,4 +1,5 @@
 function fetchItems() {
+  console.log("Fetching items")
   return(dispatch) => {
     dispatch({type: 'LOADING_ITEMS'});
     return fetch('http://localhost:3000/db')
