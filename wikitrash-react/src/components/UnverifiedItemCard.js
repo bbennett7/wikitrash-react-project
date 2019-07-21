@@ -23,7 +23,7 @@ class UnverifiedItemCard extends Component {
   referenceList = () => {
     let referencesArray = this.props.item.references.split("; ");
     return referencesArray.map((reference) => {
-      return <li>{reference}</li>
+      return <li><a href={reference} target="blank">{reference}</a></li>
     })
   }
 
