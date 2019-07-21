@@ -6,22 +6,26 @@ import UnverifiedItemCard from '../components/UnverifiedItemCard'
 
 class UnverifiedContainer extends Component {
 
+    updateContainer = () => {
+      this.forceUpdate()
+    }
+
     renderCards = () => {
       if (this.props.items) {
         let unverifiedItems = this.props.items.filter((item) => item.verified === false)
 
         const searchItem = this.props.searchItem
         if (searchItem.length > 0 && unverifiedItems.filter((item) => item.name.toLowerCase() === searchItem[0].name.toLowerCase()).length === 1) {
-          return <UnverifiedItemCard item={this.props.searchItem[0]} upVoteItem={this.props.upVoteItem} downVoteItem={this.props.downVoteItem} />
+          return <UnverifiedItemCard item={searchItem[0]} upVoteItem={this.props.upVoteItem} downVoteItem={this.props.downVoteItem} updateContainer={this.updateContainer} />
         } else {
           return unverifiedItems.map((item) => {
-            return <UnverifiedItemCard item={item} upVoteItem={this.props.upVoteItem} downVoteItem={this.props.downVoteItem} />
+            return <UnverifiedItemCard item={item} upVoteItem={this.props.upVoteItem} downVoteItem={this.props.downVoteItem} updateContainer={this.updateContainer} />
           })
         }
       }
     }
 
-    componentDidUpdate = () => {
+    componentDidMount = () => {
       this.renderCards()
     }
 

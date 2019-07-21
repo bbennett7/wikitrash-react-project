@@ -3,11 +3,14 @@ import React, { Component } from 'react';
 class UnverifiedItemCard extends Component {
 
   handleUpVote = (event) => {
+    console.log(this.props)
     this.props.upVoteItem(this.props.item)
+    this.props.updateContainer()
   }
 
   handleDownVote = (event) => {
     this.props.downVoteItem(this.props.item)
+    this.props.updateContainer()
   }
 
   render() {

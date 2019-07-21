@@ -26,7 +26,7 @@ export default function manageItems(state = {loading: false, items: [], searchIt
       if (upVoteItem[0].upvotes >= 10) {
         upVoteItem[0].verified = true
       };
-      return {...state};
+      return {...state, update: true};
 
     case 'DOWNVOTE_ITEM':
       const downVoteItem = state.items.filter((item) => item.name.toLowerCase() === action.downVoteItem.name.toLowerCase())
@@ -38,6 +38,7 @@ export default function manageItems(state = {loading: false, items: [], searchIt
         state.items.splice(index, 1)
       };
       return {...state};
+
     default:
       return state;
   }
