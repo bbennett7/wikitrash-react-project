@@ -15,16 +15,28 @@ class UnverifiedItemCard extends Component {
 
   locationList = () => {
     let locationsArray = this.props.item.locations.split("; ");
-    return locationsArray.map((location) => {
+    let locationsMap = locationsArray.map((location) => {
       return <li>{location}</li>
     })
+
+    if (locationsArray[0] === "") {
+      return <li>None</li>
+    } else {
+      return locationsMap
+    }
   }
 
   referenceList = () => {
     let referencesArray = this.props.item.references.split("; ");
-    return referencesArray.map((reference) => {
+    let referencesMap = referencesArray.map((reference) => {
       return <li><a href={reference} target="blank">{reference}</a></li>
     })
+
+    if (referencesArray[0] === "") {
+      return <li>None</li>
+    } else {
+      return referencesMap
+    }
   }
 
   render() {

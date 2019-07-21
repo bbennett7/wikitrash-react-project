@@ -8,8 +8,8 @@ export default function manageItems(state = {loading: false, items: [], searchIt
 
     case 'ADD_ITEM':
       console.log({...state, items: [...state.items, action.item]})
-      
-      return {...state, items: [...state.items, Object.assign(action.item, {verified: false, downvotes: 0, upvotes: 0})]};
+
+      return {...state, items: [...state.items, Object.assign(action.item, {verified: false, downvotes: 0, upvotes: 0, searches: 0})]};
 
     case 'SEARCH_ITEMS':
       let item = []
