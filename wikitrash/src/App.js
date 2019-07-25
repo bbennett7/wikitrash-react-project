@@ -9,8 +9,12 @@ import RecyclingSymbol from './images/RecyclingSymbol.jpg'
 class App extends Component {
 
   componentDidMount() {
+    console.log("a")
     this.props.fetchItems()
+    console.log("b")
+    // a, c, d, b, e
   }
+  
   render() {
     return (
       <div className="App">

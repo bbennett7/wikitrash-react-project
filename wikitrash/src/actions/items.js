@@ -1,12 +1,16 @@
 function fetchItems() {
   console.log("Fetching items")
+  console.log("c")
   return(dispatch) => {
     dispatch({type: 'LOADING_ITEMS'});
     return fetch('http://localhost:3000/db')
       .then(response => { return response.json() })
       .then(responseJSON => { return responseJSON})
-      .then(items => { dispatch({ type: 'FETCH_ITEMS', payload: items })})
+      .then(items => {
+        console.log("d")
+        dispatch({ type: 'FETCH_ITEMS', payload: items })})
   }
+  console.log("e")
 }
 
 function addItem(item) {

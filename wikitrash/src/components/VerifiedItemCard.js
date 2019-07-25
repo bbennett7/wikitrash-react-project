@@ -28,11 +28,13 @@ export default class VerifiedItemCard extends Component {
     }
   }
 
+
   render() {
     return (
       <div className="Verified-card">
         <h4 className="Title">{this.props.item.name}</h4>
         <img src={this.props.item.image} alt={this.props.item.name} height="60vh" width="60vh"/>
+
         <ul>
           <li><strong>rules:</strong> {this.props.item.rules}</li>
           <li><strong>where to recycle:</strong> <ul> {this.locationList()} </ul> </li>
